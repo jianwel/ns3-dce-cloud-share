@@ -1,0 +1,21 @@
+1.
+Change
+  //Config::SetDefault ("ns3::YansWifiPhy::TxPowerLevels", StringValue ("7"));
+
+To 
+   Config::SetDefault ("ns3::WifiPhy::TxPowerLevels", StringValue ("7"));
+
+
+2. aborted. cond="!(iss.eof ())", msg="Attribute value "0.0,Max=1.0" is not properly formatted", file=../src/core/model/double.cc, line=35
+
+, -> |
+
+   Ptr<RateErrorModel> em1 =
+        CreateObjectWithAttributes<RateErrorModel> ("RanVar", StringValue ("ns3::UniformRandomVariable[Min=0.0|Max=1.0]"),
+                "ErrorRate", DoubleValue (0.01),
+                "ErrorUnit", EnumValue (RateErrorModel::ERROR_UNIT_PACKET)
+                );  
+
+3. Comment out
+
+Config::SetDefault("ns3::DropTailQueue::MaxPackets", UintegerValue(1000000000));

@@ -1,0 +1,45 @@
+please do not run under the ns3 version under jianwel/newDown. 
+
+
+1.  Note: please do not edit any file when you are using this method.
+and, the result you run can be overwritten if the other runs at the same time. 
+Please use the second method to cp, if you want to gurantee your results are not overwritten.
+ 
+
+ 
+Instead, based on your needs,
+
+If you only want to run some program and try 
+
+1) create your own folder
+
+2) copy the createSoftLink.sh under your folder
+
+3) run createSoftLink.sh
+
+4) go into the dce folder and explore
+
+
+
+If you want to revise code and try.
+go to your own folder, and 
+
+cp -ra /home/ns3/jianwel/newDown dce-edit
+
+cd dce-edit/source/ns-3-dce
+
+revise the PHOME in the configure.new.mp to reflect the new location
+then run the configure.new.mp  
+
+2. 
+runing test:
+
+1) you can run the tests in the example folder
+
+e.g. 
+
+./waf --run dce-mptcp-lte-wifi
+
+2) ./runquick
+and try to look at the implementation in the oneNewLTE.cc inside myscript
+you can change the argments in the runquick script based on the code
